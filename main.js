@@ -7,7 +7,7 @@ $(function(){
   
   //load data from excel sheet
   var oReq = new XMLHttpRequest();
-	oReq.open("GET", "/data.xlsx", true);
+	oReq.open("GET", "jakobwonisch.github.io/data.xlsx", true);
 	oReq.responseType = "arraybuffer";
 
 	oReq.onload = function(oEvent) {
