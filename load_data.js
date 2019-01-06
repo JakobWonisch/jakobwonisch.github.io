@@ -2,7 +2,7 @@ var callback;
 
 function loadData(file, callback) {
 	
-	alert("loading data");
+	alert("loading data"+file);
 	
 	this.callback=callback;
 	
