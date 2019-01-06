@@ -12,8 +12,9 @@ $(function(){
 
 	oReq.onload = function(oEvent) {
 	  var arrayBuffer = oReq.response;
-
-		loadData(arrayBuffer, dataLoaded);
+		var blob = new Blob(arrayBuffer, {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});
+		
+		loadData(blob, dataLoaded);
 	};
 
 	oReq.send();
