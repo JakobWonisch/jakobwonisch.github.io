@@ -67,7 +67,7 @@ function updateHighlights()
 	
 	//clear and draw online
 	$('#map_container').removeClass("onlineShadow");
-	console.log(pageIsOnline[curIndex]);
+	
 	if(pageIsOnline[curIndex])
 		$('#map_container').addClass("onlineShadow");
 }
@@ -96,7 +96,7 @@ function summariesLoaded(data)
 	});
 	
 	//console.log(pageSummaries["Agora"]);
-	console.log(counter);
+	//console.log(counter);
 }
 
 function dataLoaded(result)
@@ -151,9 +151,6 @@ function dataLoaded(result)
 		
 		pageCountries.push(cs);
 	}
-	
-	console.log(pageCountries);
-	console.log(pageIsOnline);
 	
 	//alert("got result");
 	let container=$("#data_container");

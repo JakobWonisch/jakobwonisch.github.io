@@ -62,5 +62,13 @@ let imgs={
 
 function getImg(name)
 {
+	name=name.trim();
+	
+	if(!(name in imgs)||typeof imgs[name]=="undefined")
+	{
+		//console.log(name+" not found in img list.");
+		return "";
+	}
+	
 	return "<div class=\"logo_container\"><img class=\"logo\" src=\"images\\image"+imgs[name]+".png\"></img></div>"
 }
