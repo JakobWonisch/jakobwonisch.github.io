@@ -35,3 +35,22 @@ img {
 .orgTitle {
 	font-size: 1.5em;
 }
+
+.onlineShadow {
+	pointer-events: none;
+	box-shadow: inset 0 0 100px 25px #ff9b30;
+	z-index: 100;
+	display: block !important;
+}
+
+div.button {
+	background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0));
+}
+
+div.button:hover {
+	background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+}
+
+div.button:active {
+	background-image: linear-gradient(rgba(100,100,100,0.6), rgba(100,100,100,0));
+}

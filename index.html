@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>jVectorMap demo</title>
+  <title>SIA Visualization</title>
   <link rel="stylesheet" href="jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
   <link rel="stylesheet" href="styles.css" type="text/css"/>
   <!--<link rel="stylesheet" href="doc_style.css" type="text/css"/>-->
 
-  <script src="jquery.js"></script>
+  <!--<script src="jquery.js"></script>-->
+  <script src="jquery-3.3.1.min.js"></script>
   <script src="jquery-jvectormap-2.0.3.min.js"></script>
   <script src="jquery-jvectormap-world-mill.js"></script>
   
@@ -20,10 +21,14 @@
   <script src="add_img.js"></script>
 </head>
 <body>
-  <div id="world-map" style="width: 70%; height: 98vh; float: left;"></div>
-  <div id="data_container" style="font-family: Arial; position: relative; width: 30%; height: 100vh; float: left; display: flex; justify-content: center; align-items: center;">
-	<div id="page_left" class="unselectable" style="position: absolute; top: 0; left: 0; width: 50%; height: 10%; display: flex; justify-content: center; align-items: center;">&lt;</div>
-	<div id="page_right" class="unselectable" style="position: absolute; top: 0; left: 50%; width: 50%; height: 10%; display: flex; justify-content: center; align-items: center;">&gt;</div>
+		<div id="map_container" style="width: 68.5vw; height: 98vh; position: absolute; text-align: center; display: none;">
+			<span style="font-family: Arial; font-size: 3em; color: #ffffff; z-index: 1000; position: relative; top: 15px;">Online</span>
+		</div>
+	<div id="world-map" style="width: 70%; height: 98vh; float: left;">
+	</div>
+	<div id="data_container" style="font-family: Arial; position: relative; width: 30%; height: 100vh; float: left; display: flex; justify-content: center; align-items: center;">
+	<div id="page_left" class="unselectable button" style="z-index: 10; position: absolute; top: 0; left: 0; width: 50%; height: 10%; display: flex; justify-content: center; align-items: center;">&lt;</div>
+	<div id="page_right" class="unselectable button" style="z-index: 10; position: absolute; top: 0; left: 50%; width: 50%; height: 10%; display: flex; justify-content: center; align-items: center;">&gt;</div>
   </div>
 </body>
 </html>

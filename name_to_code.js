@@ -176,7 +176,8 @@ var jvmCountries = {
   "YE": {"name": "Yemen", "coords": [15, 48]},
   "ZM": {"name": "Zambia", "coords": [-15, 30]},
   "ZW": {"name": "Zimbabwe", "coords": [-20, 30]},
-  "XS": {"name": "Somaliland"}
+  "XS": {"name": "Somaliland"},
+  "XK": {"name": "Kosovo"}
 }
 
 function countryNameToCode(name)
@@ -194,6 +195,9 @@ function countryNameToCode(name)
 	
 	if(name.toLowerCase()=="global")
 		return getGlobal();
+	
+	if(name.toLowerCase()=="online")
+		return "online";
 	
 	console.log("WARNING: "+name+" wasn't found in code list!");
 	

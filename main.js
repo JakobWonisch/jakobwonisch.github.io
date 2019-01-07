@@ -1,4 +1,5 @@
 let pageCountries=[],
+	pageIsOnline=[],
 	pageSummaries={};
 
 $(function(){
@@ -63,6 +64,12 @@ function updateHighlights()
 	//console.log(pageCountries[curIndex]);
 	map.clearSelectedRegions();
 	map.setSelectedRegions(pageCountries[curIndex]);
+	
+	//clear and draw online
+	$('#map_container').removeClass("onlineShadow");
+	console.log(pageIsOnline[curIndex]);
+	if(pageIsOnline[curIndex])
+		$('#map_container').addClass("onlineShadow");
 }
 
 function summariesLoaded(data)
@@ -104,6 +111,10 @@ function dataLoaded(result)
 	
 	//put all countries in pageCountries
 	pageCountries=[];
+	pageIsOnline=[];
+	
+	//fill pageisonline
+	for(let i=0; i<result.length; i++){pageIsOnline.push(false);}
 	
 	for(let i=0; i<result.length; i++)
 	{
@@ -126,6 +137,9 @@ function dataLoaded(result)
 							code.splice(u, 1);
 					}
 					cs=cs.concat(code);
+				}else if(code==="online")
+				{
+					pageIsOnline[i]=true;
 				}else
 				{
 					if(code!=""&&code in jvmCountries)
@@ -137,6 +151,9 @@ function dataLoaded(result)
 		
 		pageCountries.push(cs);
 	}
+	
+	console.log(pageCountries);
+	console.log(pageIsOnline);
 	
 	//alert("got result");
 	let container=$("#data_container");
