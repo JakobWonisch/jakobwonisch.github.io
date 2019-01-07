@@ -86,7 +86,7 @@ function summariesLoaded(data)
 		$(this).find("span").first().addClass("orgTitle");
 		
 		//console.log(title +" exists: "+(title in pageSummaries));
-		//console.log(title +" exists: "+(title in pageSummaries));
+		console.log(title +" exists: "+(title in pageSummaries));
 		if(title in pageSummaries)
 		{
 			pageSummaries[title].html(getImg(title)+$(this).html());
@@ -94,8 +94,8 @@ function summariesLoaded(data)
 			counter++;
 		}
 	});
-	
-	//console.log(pageSummaries["Agora"]);
+	console.log(pageSummaries);
+	console.log(pageSummaries["Agora"]);
 	//console.log(counter);
 }
 
