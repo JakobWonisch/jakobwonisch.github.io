@@ -175,6 +175,8 @@ function dataLoaded(result)
 		container.append(page);
 	}
 	
+	console.log("in data: "+pageSummaries);
+	
 	loadSummaries();
 	
 	initPageHandler();
