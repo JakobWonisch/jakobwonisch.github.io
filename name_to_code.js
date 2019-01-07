@@ -104,7 +104,7 @@ var jvmCountries = {
   "MN": {"name": "Mongolia", "coords": [46, 105]},
   "ME": {"name": "Montenegro", "coords": [42, 19]},
   "MA": {"name": "Morocco", "coords": [32, -5]},
-  "MZ": {"name": "Mozamb", "coords": [-18.25, 35]},
+  "MZ": {"name": "Mozambique", "coords": [-18.25, 35]},
   "MM": {"name": "Myanmar", "coords": [22, 98]},
   "NA": {"name": "Namibia", "coords": [-22, 17]},
   "NP": {"name": "Nepal", "coords": [28, 84]},
