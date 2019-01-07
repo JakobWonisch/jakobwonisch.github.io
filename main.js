@@ -82,21 +82,31 @@ function summariesLoaded(data)
 	//el.find("table.c58 td").each(function(){
 	el.find("table:eq(2) td").each(function(){
 		//let title=$(this).find("span.c10.c8,span.c9.c7").first().text().trim();
-		let title=$(this).find("span").first().text().trim();
+		let title=$(this).find("span").first().text().trim().toLowerCase();
 		
 		$(this).find("span").first().addClass("orgTitle");
 		
 		//console.log(title +" exists: "+(title in pageSummaries));
-		console.log(title +" exists: "+(title in pageSummaries));
+		//console.log(title +" exists: "+(title in pageSummaries));
+		let img_container=$("<div></div>");
+		img_container.addClass("logo_container");
+		
+		let img_logo=$(this).find("img:eq(0)");
+		img_logo.removeAttr('style');
+		img_logo.addClass("logo");
+		
+		img_container.html(img_logo);
+		
 		if(title in pageSummaries)
 		{
-			pageSummaries[title].html(getImg(title)+$(this).html());
+			pageSummaries[title].html(img_container);
+			pageSummaries[title].append($(this).html());
 		
 			counter++;
 		}
 	});
-	console.log(pageSummaries);
-	console.log(pageSummaries["Agora"]);
+	//console.log(pageSummaries);
+	//console.log(pageSummaries["Agora"]);
 	//console.log(counter);
 }
 
@@ -171,12 +181,12 @@ function dataLoaded(result)
 		
 		//page.prop("id", "id"+result[i].Name);
 		
-		pageSummaries[result[i].Name.trim()]=page;
+		pageSummaries[result[i].Name.trim().toLowerCase()]=page;
 		
 		container.append(page);
 	}
 	
-	console.log("in data: "+pageSummaries);
+	//console.log("in data: "+pageSummaries);
 	
 	loadSummaries();
 	
