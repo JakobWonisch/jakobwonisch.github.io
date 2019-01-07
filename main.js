@@ -79,7 +79,8 @@ function summariesLoaded(data)
 	
 	let counter=0;
 	
-	el.find("table.c58 td").each(function(){
+	//el.find("table.c58 td").each(function(){
+	el.find("table:eq(2) td").each(function(){
 		//let title=$(this).find("span.c10.c8,span.c9.c7").first().text().trim();
 		let title=$(this).find("span").first().text().trim();
 		
