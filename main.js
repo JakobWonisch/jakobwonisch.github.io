@@ -5,6 +5,20 @@ let pageCountries=[],
 $(function(){
 	//dom loaded
 	
+	$(this).keydown(function(e){
+		var event = window.event ? window.event : e;
+		
+		if(e.keyCode==37)
+		{
+			changePage(-1);
+		}
+		
+		if(e.keyCode==39)
+		{
+			changePage(1);
+		}
+	});
+	
  // $('#world-map').vectorMap({map: 'world_mill'});
   
    map = new jvm.Map({
