@@ -182,11 +182,12 @@ var jvmCountries = {
 
 function countryNameToCode(name)
 {	
-	console.log(name.toLowerCase()+" = "+(name.toLowerCase()=="Cote d'Ivoire".toLowerCase()));
+	//console.log(name.toLowerCase().replace(/'|´|`|’|\x2019/g, ""));
+	//console.log(name.toLowerCase()+" = "+(name.toLowerCase().replace(/'/g, "")=="Cote d'Ivoire".replace(/'/g, "").toLowerCase()));
 	
 	for(var key in jvmCountries)
 	{
-		if(name.toLowerCase()==jvmCountries[key].name.toLowerCase())
+		if(name.toLowerCase().replace(/'/g, "")==jvmCountries[key].name.toLowerCase().replace(/'/g, ""))
 		{
 			return key;
 		}
