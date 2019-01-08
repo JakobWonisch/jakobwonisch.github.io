@@ -11,11 +11,13 @@ $(function(){
 		if(e.keyCode==37)
 		{
 			changePage(-1);
+			updateHighlights();
 		}
 		
 		if(e.keyCode==39)
 		{
 			changePage(1);
+			updateHighlights();
 		}
 	});
 	
@@ -108,7 +110,7 @@ function summariesLoaded(data)
 		let img_logo=$(this).find("img:eq(0)");
 		img_logo.removeAttr('style');
 		img_logo.addClass("logo");
-		
+
 		img_container.html(img_logo);
 		
 		if(title in pageSummaries)
@@ -119,6 +121,11 @@ function summariesLoaded(data)
 			counter++;
 		}
 	});
+	
+	$("img").on( "load", function(){
+			pageChanged();
+		}
+	);
 	//console.log(pageSummaries);
 	//console.log(pageSummaries["Agora"]);
 	//console.log(counter);
@@ -191,7 +198,9 @@ function dataLoaded(result)
 		
 		page.css("display","none");
 		
-		page.html(getImg(result[i].Name)+result[i].Name);
+		//page.html(getImg(result[i].Name)+result[i].Name);
+		//add name plus loading spinner
+		page.html(result[i].Name+"<div style=\"margin-top: 15px; text-align: center\"><div class=\"lds-dual-ring\"></div></div>");
 		
 		//page.prop("id", "id"+result[i].Name);
 		

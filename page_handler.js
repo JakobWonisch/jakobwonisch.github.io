@@ -1,6 +1,6 @@
 let pages,
 	curIndex=0, prevIndex=0;
-	
+
 function initPageHandler()
 {
 	pages=$(".page").toArray();
@@ -22,4 +22,12 @@ function pageChanged()
 	pages[prevIndex].style.display="none";
 	
 	pages[curIndex].style.display="inline-block";
+	
+	
+	let top=$(pages[curIndex]).offset().top,
+		yOffset=$(window).height()*0.1;
+	
+	if(top<yOffset)
+		$(pages[curIndex]).css({position: "absolute", top: yOffset});
+	//console.log();
 }

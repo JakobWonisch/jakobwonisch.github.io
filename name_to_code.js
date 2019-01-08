@@ -181,7 +181,9 @@ var jvmCountries = {
 }
 
 function countryNameToCode(name)
-{
+{	
+	console.log(name.toLowerCase()+" = "+(name.toLowerCase()=="Cote d'Ivoire".toLowerCase()));
+	
 	for(var key in jvmCountries)
 	{
 		if(name.toLowerCase()==jvmCountries[key].name.toLowerCase())
